@@ -8,7 +8,7 @@ var maxSubArray = function(nums) {
 
   for (let i = 0; i < nums.length; i += 1) {
     temp += nums[i];
-    if (sum < temp) sum = temp;
+    sum = Math.max(sum, temp);
     if (temp < 0) temp = 0;
   }
 
@@ -25,5 +25,11 @@ var maxSubArray = function(nums) {
 // [-3, -1] [-1]
 // 有一个正数都可以用上面的
 // 如果全是负数呢？
+// 为什么要给temp赋值为0？ 其实在趋近正数 因为如果存在正数一定比其他负数大
+// 如果要求返回最大子序列怎么办？tempStart, tempEnd/resStart, resEnd
+// temp += nums[i] tempEnd = i;
+// if (sum < temp) resStart = tempStart, resEnd, tempEnd
+// if (temp < 0) tempStart, tempEnd = i + 1?溢出问题？
+
 
 // console.log(maxSubArray([-1]));
