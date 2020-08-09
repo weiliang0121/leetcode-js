@@ -22,4 +22,4 @@ var searchInsert = function(nums, target) {
   return ans;
 };
 
-// 不会二分法？？？？
+// 不会二分法？？？
